@@ -59,6 +59,13 @@ Sometimes we see the port number in the URL if the web server is running on a "n
     - Invented for the Web to Retrieve HTML, Images, Documents, etc.
     - Extended to be data in addition to documents - RSS, Web Services, etc. Basic Concept - Make a Connection - Request a document - Retrieve the Document - Close the Connection
 
+- What is a Protocol
+    - A set of rules that all parties follow so we can predict each other's behavior
+
+Sample web address includes for example http:// (the protocol) www. web-address .com (the host to retrieve from) /somedoc.format (the document to retrieve)
+
+When you click a link in a browser (which is a process/application running on your computer), the browser sends a GET request to port on a webserver. The web server sends back a response, which the browser then parses/renders for you to view.
+
 
 
 
