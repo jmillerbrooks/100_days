@@ -92,9 +92,51 @@ Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'
             - hence some_data_received.decode()
             - ditto sending our GET request as 'GET some_string_for_rest_of_stuff'.encode()
             - encode/decode basically alias utf_(to/from)_bytes
-    - urllib
-        - does all the work of sockets for us
+- urllib
+    - does all the work of sockets for us
+- urllib_browser.py here
+- Web Scraping
+    - This guy has an interesting take on what this is fundamentally that I hadn't really thought about before: web scraping is when a program/script pretends to be a browser and retrieves web pages, looks at those pages, extracts information and looks at more pages
+- scraper.py here
+- Web Services
+    - Two commonly used formats to represent data between applications and across networks
+        - XML
+        - JSON
+- XML Basics
+    - eXtensible Markup Language
+    - helps information systems share structured data
+    - tags indicate beginning and ending of elements
+    - attributes are Keyword/value pairs on the opening tag of XML
+    - serialize/deserialize convert to/from common format that can be stored or transmitted between systems in a programming language-independent manner
+    - start tag, end tag as in html, but can name the tag anything like a dictionary object. Additionally, there can be attribute within the tag (key="value"), must retain double quotes, before close of the bracket, and text content between start and end tags. Self closing tag does not include closing tags, just a / before end bracket of start tag, and all info contained in attributes.
+    - Can have multiple attributes but only one text node per tag
+    - White space does not matter, indent only to be readable
+    - "Elements" (or Nodes)
+        - simple = tag and some data
+        - complex = tag with additional tags
+        - can be visualized as a tree with parent child relationships
+        - also works as a path: a/b/c etc.
+- XML Schema
+    - Description of the legal format of an XML document
+    - Expressed in terms of constraints on the structure and content of documents
+    - Often used to specify a "contract" between systems - "My system will only accept XML that conforms to this particular Schema"
+    - If a particular piece of XML meets the spec. of the Schema, it is said to "validate"
+- XSD Schema:
+    - xml schema from W3C
+    - xs:element = simple element
+    - xs:sequence = announcing that several elements will follow (?)
+    - xs:complexType = complex element
+    - can have constraints (i.e. minOccurs="1", etc.)
+    - each can be typed as in type="xs:string"
+- xml.py here.
+    - uses xml.etree.ElementTree in python
+    - methods include making a tree from string of xml content, findall, find, get, etc.
+- 
+
+
         
+
+
 
         
 
