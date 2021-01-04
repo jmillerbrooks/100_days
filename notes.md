@@ -131,7 +131,14 @@ Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'
 - xml.py here.
     - uses xml.etree.ElementTree in python
     - methods include making a tree from string of xml content, findall, find, get, etc.
-- 
+- Service Oriented approach
+    - Uses APIs to interact with data spread across multiple applications
+- Application Program Interface (API)
+- twitter_api.py here
+    - this code is not going to work because I don't have a twitter account
+    - however, twurl.py can likely be found on the py4e site, and the discussion of contents starts around minute 6/7 in the web services G video, so flagging for potential future use
+
+
 
 
         
