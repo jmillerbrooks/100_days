@@ -3,7 +3,7 @@
 
 Disclaimer, these are just for me, they are often taken directly from another resource, and should not be attributed to me.
 
-### Day 1. Sockets
+### Day 1.0 Sockets
 
 - What is a socket?
     - A socket is an internal endpoint for sending and receiving data.
@@ -22,7 +22,7 @@ Disclaimer, these are just for me, they are often taken directly from another re
 - Socket Type
     - Sockstream (TCP/connection oriented protocols) or sock degram (conectionless)
 
-### Day 2. Networking
+### Day 2.0 Networking
 
 - Transport Control Protocol (TCP)
     - Built on top of IP (Internet Protocol)
@@ -65,6 +65,40 @@ Sometimes we see the port number in the URL if the web server is running on a "n
 Sample web address includes for example http:// (the protocol) www. web-address .com (the host to retrieve from) /somedoc.format (the document to retrieve)
 
 When you click a link in a browser (which is a process/application running on your computer), the browser sends a GET request to port on a webserver. The web server sends back a response, which the browser then parses/renders for you to view.
+
+### Day 1.1 Networking Cont'd
+
+Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'm going to start from scratch on the day count, and pick up where I left off on the content.
+
+- Characters and Strings
+    - ASCII (American Standard Code for Information Interchange)
+        - Latin character set for North American language
+        - 128 possible values
+        - 8 bit values (1 byte)
+        - Efficient, but doesn't handle more complex characters
+        - The ord() function in python tells us the numeric value of a simple ASCII character
+    - Unicode
+        - Handles far more characters (billions)
+        - UTF-32 is 4 bytes per character, this is too large to send over the web in practice
+        - Ditto UTF-16 (Two bytes/character)
+        - UTF-8 is recommended practice for encoding data to be exchanged between systems
+        - Upwards compatible with ASCII
+        - Dynamic length (1-4 bytes)
+    - Strings in Python
+        - All strings in Python3 are unicode (internally)
+        - Python3 has a new class called "bytes"
+            - e.g. x = b'abc' (like an f string sort of, or a raw string, but a bytes)
+        - When we talk to a network resource using sockets, or talk to a database, we have to encode and decode data (Usually to UTF-8)
+            - hence some_data_received.decode()
+            - ditto sending our GET request as 'GET some_string_for_rest_of_stuff'.encode()
+            - encode/decode basically alias utf_(to/from)_bytes
+    - urllib
+        - does all the work of sockets for us
+        
+
+        
+
+
 
 
 
