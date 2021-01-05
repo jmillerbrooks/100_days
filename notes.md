@@ -138,6 +138,53 @@ Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'
     - this code is not going to work because I don't have a twitter account
     - however, twurl.py can likely be found on the py4e site, and the discussion of contents starts around minute 6/7 in the web services G video, so flagging for potential future use
 
+### Day 2.1
+
+Taking a look at bash today, feel like this is a topic that I pick up and put down a lot, but that is useful for lots of things like deploying with Heroku, Procfiles, Docker, etc. Particularly interested in environment variables, sed/awk, and in general navigating more comfortably with scripts etc.
+
+- Variables
+    - Variables in bash do not have data types
+    - " Wrapping the variable name between curly brackets is not required but is considered good practice, and I would advise to use them whenever you can:"
+        - Not sure why this is.
+        - i.e. ${var_name} instead of $var_name
+    - variable assignment with var_name="var_value"
+        - double quotes and no space on either side of the equal sign
+- User input
+    - you can prompt user input in a bash script with the read syntax
+        - as in: read var_name
+        - whatever user inputs will be stored as $var_name
+        - you can also replicate the prompt echo "Enter some var_name here:" with the -p flag of the read command, as in:
+            read -p "Enter some var_name here:" var_name
+- Comments
+    - Preceded by the hash as in other common syntax
+    - #! (shebang) is not a comment, affects execution
+- Arguments
+    - Passed after the name of the script, i.e.:
+    script_name arg1 arg2 arg3 arg_etc
+    - Accessed in the script with $1, $2, $3, etc.
+    - $0 accesses the script itself
+        - can be used to self destruct the script, i.e. include at the end:
+        rm -f $0
+        - can also be used if you need to access the name of the script
+    - Access all arguments with $@
+- Arrays
+    - Hold multiple values under one name
+    - You can initialize them as follows:
+    my_array=("value1" "value2" "value3" "value_etc")
+    - Enclose in () and separate each value with a space
+    - Access elements in an array like a python list, but use curly brackets around the array name
+        - i.e.:
+
+        echo ${my_array[0]}
+        
+        - or:
+
+        echo ${my_array[-1]}
+        (although this doesn't actually seem to work? -1 index yields "bad array subscript")
+        maybe this is a zsh problem?... worth looking into TODO
+    - Access all elements in an array with ${my_array[@]}
+    - Access the total number of elements in an array with ${#my_array[@]}
+
 
 
 
