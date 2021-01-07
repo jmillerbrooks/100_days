@@ -3,7 +3,7 @@
 
 Disclaimer, these are just for me, they are often taken directly from another resource, and should not be attributed to me.
 
-### Day 1.0 Sockets
+### Day 1.0 - Sockets
 
 - What is a socket?
     - A socket is an internal endpoint for sending and receiving data.
@@ -22,7 +22,7 @@ Disclaimer, these are just for me, they are often taken directly from another re
 - Socket Type
     - Sockstream (TCP/connection oriented protocols) or sock degram (conectionless)
 
-### Day 2.0 Networking
+### Day 2.0 - Networking
 
 - Transport Control Protocol (TCP)
     - Built on top of IP (Internet Protocol)
@@ -66,7 +66,7 @@ Sample web address includes for example http:// (the protocol) www. web-address 
 
 When you click a link in a browser (which is a process/application running on your computer), the browser sends a GET request to port on a webserver. The web server sends back a response, which the browser then parses/renders for you to view.
 
-### Day 1.1 Networking Cont'd
+### Day 1.1 - Networking Cont'd
 
 Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'm going to start from scratch on the day count, and pick up where I left off on the content.
 
@@ -138,7 +138,7 @@ Slipped and didn't hit my goal yesterday. Since it's only been a couple days, I'
     - this code is not going to work because I don't have a twitter account
     - however, twurl.py can likely be found on the py4e site, and the discussion of contents starts around minute 6/7 in the web services G video, so flagging for potential future use
 
-### Day 2.1
+### Day 2.1 - Bash
 
 Taking a look at bash today, feel like this is a topic that I pick up and put down a lot, but that is useful for lots of things like deploying with Heroku, Procfiles, Docker, etc. Particularly interested in environment variables, sed/awk, and in general navigating more comfortably with scripts etc.
 
@@ -184,6 +184,51 @@ Taking a look at bash today, feel like this is a topic that I pick up and put do
         maybe this is a zsh problem?... worth looking into TODO
     - Access all elements in an array with ${my_array[@]}
     - Access the total number of elements in an array with ${#my_array[@]}
+### Day 3 - Bash Cont'd
+
+Bash went well yesterday, I really like this book Introduction to Bash Scripting by Bobby Iliev. It does not go super deep, but it does just get you back in the swing of bash right away. I'll probably want to look at another resource after I finish this, but feel like this is providing great context that I've always been missing when I've tried to learn bash in the past.
+
+- Conditional Expressions
+    - File Expressions (this syntax applies to variables, use simple string with no quotes to check a filename directly):
+        - True if file exists
+            [[ -a ${file} ]]
+        - True if file exists and is block special file (TODO what is that?)
+            [[ -b ${file} ]]
+        - True if file exists and is a character special file (TODO what is that?)
+            [[ -c ${file} ]]
+        - True if file exists and is a directory
+            [[ -d ${file} ]]
+        - True if file exists.
+            [[ -e ${file} ]]
+        - True if file exists and is a regular file
+            [[ -f ${file} ]]
+        - True if file exists and is a symbolic link
+            [[ -h ${file} ]]
+        - True if file exists and is readable
+            [[ -r ${file} ]]
+        - True if file exists and has a size greater than zero
+            [[ -s ${file} ]]
+        - True if file exists and is writable
+            [[ -w ${file} ]]
+        - True if file exists and is executable
+            [[ -x ${file} ]]
+        - True if file exists and is a symbolic link
+            [[ -L ${file} ]]
+    - String Expressions
+        - True if the shell variable varname is set (has been assigned a value) - TODO couldn't get this to work
+            [[ -v ${varname} ]]
+        - True if the length of the string is non-zero
+            [[ -n ${string} ]]
+        - True if the strings are equal
+            [[ ${string1} == ${string2} ]]
+        - True if the strings are not equal
+            [[ ${string1} != ${string2} ]]
+        - True if string1 sorts before string2
+            [[ ${string1} < ${string2} ]]
+        - True if string1 sorts after string2
+            [[ ${string1} > ${string2} ]]
+        
+
 
 
 
