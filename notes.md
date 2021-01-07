@@ -227,6 +227,30 @@ Bash went well yesterday, I really like this book Introduction to Bash Scripting
             [[ ${string1} < ${string2} ]]
         - True if string1 sorts after string2
             [[ ${string1} > ${string2} ]]
+    - Arithmetic Operators
+        - True if the numbers are equal
+            [[ ${arg1} -eq ${arg2} ]]
+        - True if the numbers are not equal
+            [[ ${arg1} -ne ${arg2} ]]
+        - True if arg1 is less than arg2
+            [[ ${arg1} -lt ${arg2} ]]
+        - True if arg1 is greater than arg2
+            [[ ${arg1} -gt ${arg2} ]]
+        - True if arg1 is less than or equal to arg2
+            [[ ${arg1} -le ${arg2} ]]
+        - True if arg1 is greater than or equal to arg2
+            [[ ${arg1} -ge ${arg2} ]]
+    - Possible to chain AND and OR operators
+        [[ condition1 ]] && [[ condition2 ]]
+        [[ condition1 ]] || [[ condition2 ]]
+    - If statements syntax
+        if [[ condition ]]
+        then
+            \<commands\>
+        fi
+    
+        
+        
         
 
 
