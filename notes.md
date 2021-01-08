@@ -191,63 +191,137 @@ Bash went well yesterday, I really like this book Introduction to Bash Scripting
 - Conditional Expressions
     - File Expressions (this syntax applies to variables, use simple string with no quotes to check a filename directly):
         - True if file exists
+
             [[ -a ${file} ]]
         - True if file exists and is block special file (TODO what is that?)
+
             [[ -b ${file} ]]
         - True if file exists and is a character special file (TODO what is that?)
+
             [[ -c ${file} ]]
         - True if file exists and is a directory
+
             [[ -d ${file} ]]
         - True if file exists.
+
             [[ -e ${file} ]]
         - True if file exists and is a regular file
+
             [[ -f ${file} ]]
         - True if file exists and is a symbolic link
+
             [[ -h ${file} ]]
         - True if file exists and is readable
+
             [[ -r ${file} ]]
         - True if file exists and has a size greater than zero
+
             [[ -s ${file} ]]
         - True if file exists and is writable
+
             [[ -w ${file} ]]
         - True if file exists and is executable
+
             [[ -x ${file} ]]
         - True if file exists and is a symbolic link
+
             [[ -L ${file} ]]
     - String Expressions
         - True if the shell variable varname is set (has been assigned a value) - TODO couldn't get this to work
+
             [[ -v ${varname} ]]
         - True if the length of the string is non-zero
+
             [[ -n ${string} ]]
         - True if the strings are equal
+
             [[ ${string1} == ${string2} ]]
         - True if the strings are not equal
+
             [[ ${string1} != ${string2} ]]
         - True if string1 sorts before string2
+
             [[ ${string1} < ${string2} ]]
         - True if string1 sorts after string2
+
             [[ ${string1} > ${string2} ]]
     - Arithmetic Operators
         - True if the numbers are equal
+
             [[ ${arg1} -eq ${arg2} ]]
         - True if the numbers are not equal
+
             [[ ${arg1} -ne ${arg2} ]]
         - True if arg1 is less than arg2
+
             [[ ${arg1} -lt ${arg2} ]]
         - True if arg1 is greater than arg2
+
             [[ ${arg1} -gt ${arg2} ]]
         - True if arg1 is less than or equal to arg2
+
             [[ ${arg1} -le ${arg2} ]]
         - True if arg1 is greater than or equal to arg2
+
             [[ ${arg1} -ge ${arg2} ]]
     - Possible to chain AND and OR operators
+
         [[ condition1 ]] && [[ condition2 ]]
+
         [[ condition1 ]] || [[ condition2 ]]
     - If statements syntax
-        if [[ condition ]]
-        then
-            \<commands\>
-        fi
+
+            if [[ condition ]]
+
+            then
+
+            <commands>
+            fi
+    - If-else is same with else added after then commands before fi
+    - Switch case statements syntax
+
+
+            case $some_variable in
+
+                pattern_1)
+                    commands
+                    ;;
+                pattern_2| pattern_3)
+                    commands
+                    ;;
+                *)
+                    default commands
+                    ;;
+            esac
+### Day 4 - TensorFlow
+
+Was liking bash, but decided to brush up on TensorFlow from the basics up, feel a little rusty but hopefully have some fun with it.
+
+- Perceptron Model
+    - Basic Unit based off of the Biological Neuron
+        - Accepts a signal through Dendrites
+        - Does some calculation in the Nucleus
+        - Outputs through an Axon (typically moves forward through another Neuron)
+    - Math implementation of a single perceptron: "Neuron" is some function f(X) that accepts inputs X and returns output y
+        - f(X) is the activation function, for example, this is a linear function for a single perceptron in a network:
+            - Inputs are weighted, weights will be adjusted to optimize cost function for f(X) = y
+            - Inputs are likewise biased to account for zero inputs.
+            - Weighted inputs thus must overcome the bias value to have any effect on y
+    - Multi-Layer Perceptron Model:
+        - Connected layers of perceptrons
+        - Outputs of one perceptron are directly fed as inputs to another perceptron(s) in the next layer
+        - First layer is input layer
+        - Last layer is the output layer
+        - Layers in between input and output are "hidden layers"
+            - Difficulty to interpret increases with interconnectivity and distance from input/output layers
+        - Neural Network becomes "deep neural network" when there are 2 or more hidden layers
+        - Width of a network is how many neurons in a layer
+        - Depth is how many layers in total
+        - Zhou Lu and also Boris Hanin proved that Neural Networks can approximate any convex continuous function
+        
+        
+
+
     
         
         

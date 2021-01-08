@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# TF stuff
+tf/TF_2_Notebooks_and_Data
+tf/FINAL_TF2_FILES.zip
+
+# VSCode
+.DS_Store
