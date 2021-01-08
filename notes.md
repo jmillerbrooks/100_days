@@ -293,6 +293,7 @@ Bash went well yesterday, I really like this book Introduction to Bash Scripting
                     default commands
                     ;;
             esac
+
 ### Day 4 - TensorFlow
 
 Was liking bash, but decided to brush up on TensorFlow from the basics up, feel a little rusty but hopefully have some fun with it.
@@ -318,28 +319,67 @@ Was liking bash, but decided to brush up on TensorFlow from the basics up, feel 
         - Width of a network is how many neurons in a layer
         - Depth is how many layers in total
         - Zhou Lu and also Boris Hanin proved that Neural Networks can approximate any convex continuous function
-        
-        
+
+### Day 5 - TensorFlow cont'd
+
+Looking at activation functions
 
 
+- Activation Functions:
+
+    - Simplest networks use a step function that outputs 0 or 1
+        - Small changes not detected
+    - Better to use a more dynamic function, like the sigmoid function:
     
+            1 / (1 + e^(-z))
+    
+        - Still works for classification and more sensitive to small changes
+    
+    - Hyperbolic tangent:
+
+            tanh(z)
+    
+        - derivation:
+
+                cosh(x) = (e^x + e^-x) / 2
+                
+                sinh(x) = (e^x - e^-x) / 2
+                
+                tanh(x) = sinh(x) / cosh(x)
+        - outputs between -1 and 1 instead of 0 to 1
+
+    - Rectified Linear Unit (ReLU)
+    
+            ReLU(z) = max(0, z)
+            with z a linear function of inputs
         
+        - Good performance esp. when dealing with vanishing gradients
+    
+- Multiclass Activation Functions:
+    - 2 main types
+        - Non-Exclusive classes
+            - A data point can have multiple classes assigned to it
+            - E.g. photos can have multiple tags
+        - Mutually Exclusive Classes
+            - Only one class per data point
+            - E.g. hot dog not hot dog problem
+    - Organizing Multiple Classes
+        - Easiest way is to have one output per class
+        - One way to do this is with a one-hot
+        - Sigmoid activation function for non-exclusive classes just outputs a probability for each class
+            - Allows each neuron to output independently of the other classes
+        - For Mutually Exclusive Classes, softmax:
+
+                sigma(x) = 
+                (e^(z_i)) / (sum(j=1 to K) e^(z_j)) 
+                for i= 1, ... , K where K = number of categories
+            
+            - Softmax calculates the probabilities distribution of the event over K different events (each target class proba / all possible target classes)
+            - The range will be 0 to 1, and the sum of all probabilities will be equal to 1
+            - Model returns the probas of each class and the target class chosen will have the highest probability
+
+ 
+
+
+
         
-        
-
-
-
-
-
-        
-
-
-
-        
-
-
-
-
-
-
-
