@@ -378,7 +378,86 @@ Looking at activation functions
             - The range will be 0 to 1, and the sum of all probabilities will be equal to 1
             - Model returns the probas of each class and the target class chosen will have the highest probability
 
- 
+### Day 6 - NN Fundamentals Cont'd
+
+- Cost Functions
+    - Output y_hat is model's estimation
+    - y is true value
+    - How do we evaluate the prediction? (A Cost Function)
+        - Must be an average, so that we can output a single value
+    - One common cost function is the quadratic cost function
+        
+            C = (1 / 2n) * sum_x ||y(x) - a^L (x)||^2
+        
+        - (Basically RMSE for multidimensional data)
+        - L2 norm of difference between the real values y(x) against our predicted values a(x) over the last Layer L (output/activation layer), averaged over n points
+        - Keeps all errors positive, and also punishes large errors (since they are squared)
+    - Can think of cost function as function of four main elements:
+
+            C(W, B, S^r, E^r)
+        
+        - W is neural network's weights
+        - B is Biases
+        - S^r is the input of a single training sample
+        - E^r is the desired output of that training sample
+    - For classification problems often use cross entropy loss function
+        - Assumes model predicts a probability distribution p(y=i) for each class i=1,2,...,C
+        - For M number of classes > 2:
+
+                Formula is:
+                -Sum_(c=1 to M) y_0,c log(p_0,c)
+
+- Gradient Descent
+    - Take slope at a point
+    - Move downward with slope, until converging to zero (a minimum)
+    - Step size (learning rate)
+        - Smaller steps, takes longer to find minimum
+        - Larger steps faster but risk overshooting minimum
+        - Can be constant or start larger and then shrink step size as slope gets closer to zero
+            - This is called adapted gradient descent
+            - 2015 Kingma and Ba published paper "Adam: A Method for Stochastic Gradient Optimization"
+                - Much more efficient way of searching for these minima
+                - very common optimization method for neural networks
+    - When dealing with N-dimensional vectors (tensors), the notation changes from derivative to gradient
+- Backpropagation
+    - How do the cost function results change with respect to the weights in the network, so we can update the weights to minimize the cost function
+    - Assume a network where each layer has only one neuron:
+        - Each input will receive a weight and bias
+        - For 2 hidden layers (depth 4 including input layer), we have Cost =
+
+                C(w1,b1,w2,b2,w3,b3)
+                where w=weights, b=biases
+          and layers:
+
+                  O  --  O  --  O  --  O
+                  |      |      |      |
+                [L-n]  [L-2]  [L-1]   [L]
+
+                (Last Layer is L each layer has only one neuron)
+        - Taking the last two layers (L-1, L), let's define z=wx+b
+        - Then applying activation function we'll also define a=sigma(z)
+        - This implies:
+
+                z^L = w^L*a^(L-1) + b^L
+                a^L = sigma(z^L)
+                C_0(...) = (a^L - y)^2
+
+        - We'd like to know how sensitive the cost function is to changes in w:
+
+                dC_0 / dw^L
+
+        - applying chain rule we have:
+
+                dC_0/dw^L = (dz^L/ dw^L) (da^L/ dz^L) (dC_0/ da^L)
+
+        - We can calculate the same for the bias terms:
+
+                dC_0/db^L = (dz^L/ db^L) (da^L/ dz^L) (dC_0/ da^L)
+
+        - The idea is that we can use the gradient to go back through the network and adjust our weights and biases to minimize the output of the error vector on the last output layer
+        - Hadamard Product (who knows how to notate that without some tex lol)
+        - 
+        
 
 
 
