@@ -456,7 +456,18 @@ Looking at activation functions
 
         - The idea is that we can use the gradient to go back through the network and adjust our weights and biases to minimize the output of the error vector on the last output layer
         - Hadamard Product (who knows how to notate that without some tex lol)
-        - 
+
+### Day 7 - TensorFlow/Keras Basics
+
+- TensorFlow vs. Keras
+    - TensorFlow
+        - open source deep learning library developed by Google, with TF 2.0, being officially released in 2019
+        - Large ecosystem of related components, Tensorboard, deployment options, APIs for different languages, etc.
+    - Keras
+        - High-level python library that can use a variety of deep learning libraries underneath, such as TensorFlow, CNTK, or Theano
+        - With release of TF 2.0, TF adopted Keras as official API for TF
+- Keras Syntax Basics
+    - 
         
 
 
