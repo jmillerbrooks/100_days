@@ -467,8 +467,52 @@ Looking at activation functions
         - High-level python library that can use a variety of deep learning libraries underneath, such as TensorFlow, CNTK, or Theano
         - With release of TF 2.0, TF adopted Keras as official API for TF
 - Keras Syntax Basics
-    - 
+    - 2 ways to create a base model:
+        - Call Sequential and pass a list of layers wanted
+
+                i.e.:
+                model = Sequential([
+                    Dense(units=2),
+                    Dense(units=2, activation='relu'),
+                    Dense(units=2)
+                ])
+
+        - Create empty Sequential model, and use the .add method:
+
+                i.e.:
+                model = Sequential()
+
+                model.add(Dense(4, activation='relu'))
+                model.add...
+                etc.
+
+        - Second method generally preferred for on the fly, first method for known structures
+        - Need to add final output layer, (i.e. for prediction of one price, need units=1, etc.)
+        - Last call is as follows:
+
+                model.compile(optimizer='some_optimizer',
+                              loss='some_loss_function')
+                
+                Choosing an optimizer and loss
+                Keep in mind what kind of problem you are trying to solve:
+
+                # For a multi-class classification problem
+                model.compile(optimizer='rmsprop',
+                            loss='categorical_crossentropy',
+                            metrics=['accuracy'])
+
+                # For a binary classification problem
+                model.compile(optimizer='rmsprop',
+                            loss='binary_crossentropy',
+                            metrics=['accuracy'])
+
+                # For a mean squared error regression problem
+                model.compile(optimizer='rmsprop',
+                            loss='mse')
         
+    - Once base model is implemented, call .fit method, with params batch, epochs, callbacks, etc.
+    
+
 
 
 
