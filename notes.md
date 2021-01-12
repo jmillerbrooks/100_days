@@ -511,8 +511,16 @@ Looking at activation functions
                             loss='mse')
         
     - Once base model is implemented, call .fit method, with params batch, epochs, callbacks, etc.
-    
 
+
+### Day 8 - TensorFlow/Keras cont'd
+
+- Keras Model Evaluation:
+    - model.evaluate(X_test, y_test) returns model's loss function evaluated on the test set (loss function is passed in model.compile() as shown above)
+    - model.predict(X_test) performs as in sklearn etc.
+- Save a model with model.save('some_filename_here')
+    - to load: from tensorflow.keras.models import load_model, and call on the path to saved model
+    
 
 
 
