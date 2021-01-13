@@ -520,7 +520,11 @@ Looking at activation functions
     - model.predict(X_test) performs as in sklearn etc.
 - Save a model with model.save('some_filename_here')
     - to load: from tensorflow.keras.models import load_model, and call on the path to saved model
-    
+
+### Day 9 - Keras Regression
+
+- See notebook in local dir tf/TF_2_Notebooks_and_Data/03-ANNs
+
 
 
 
