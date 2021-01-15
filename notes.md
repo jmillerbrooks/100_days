@@ -525,7 +525,9 @@ Looking at activation functions
 
 - See notebook in local dir tf/TF_2_Notebooks_and_Data/03-ANNs
 
+### Day 10-11
 
+Worked SQL last two days
 
 
         
